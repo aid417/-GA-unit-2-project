@@ -5,8 +5,10 @@ const port = 3000;
 //MIDDLEWARE
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.static(__dirname + "/public"));
 //ROUTES
 
+//index:
 app.get("/", (req, res) => {
   res.send("chore app");
 });
