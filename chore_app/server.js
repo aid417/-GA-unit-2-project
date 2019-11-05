@@ -1,16 +1,31 @@
+//DEPENDENCIES
 const express = require("express");
 const app = express();
 const port = 3000;
-
+const mongoose = require("mongoose");
+const session = require("express-session");
+// const methodOverride = require("method-override");
 //MIDDLEWARE
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
+// app.use(methodOverride("_method"));
+
+//CONTROLLERS
+app.use(
+  session({
+    secret: "feedmeseymour", //some random string
+    resave: false,
+    saveUninitialized: false
+  })
+);
+const userController = require("./controllers/users.js");
+app.use("/users", userController);
 //ROUTES
 
 //index:
 app.get("/", (req, res) => {
-  res.send("chore app");
+  res.render("index.ejs");
 });
 //LISTENER
 app.listen(port, () => {
