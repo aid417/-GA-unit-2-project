@@ -5,6 +5,7 @@ const port = 3000;
 const mongoose = require("mongoose");
 const session = require("express-session");
 const User = require("./models/users.js");
+const Chores = require("./models/chores.js");
 const methodOverride = require("method-override");
 //MIDDLEWARE
 app.use(express.urlencoded({ extended: false }));
@@ -24,6 +25,8 @@ const userController = require("./controllers/users.js");
 app.use("/users", userController);
 const sessionController = require("./controllers/sessions.js");
 app.use("/sessions", sessionController);
+const choresController = require("./controllers/chores.js");
+app.use("/chores", choresController);
 //ROUTES
 
 //index:

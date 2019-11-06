@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const { choresSchema } = require("./chores.js");
 
-const userSchema = Schema({
+const userSchema = new Schema({
   username: String,
-  password: String
+  password: String,
+  household: String,
+  chores: [choresSchema]
 });
 
 const User = mongoose.model("User", userSchema);

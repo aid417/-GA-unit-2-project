@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/users.js");
+const Chores = require("../models/chores");
 const bcrypt = require("bcrypt");
 //ROUTES
 router.post("/", (req, res) => {
