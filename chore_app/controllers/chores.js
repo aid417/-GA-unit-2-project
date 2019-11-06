@@ -8,7 +8,7 @@ const { Chores } = require("../models/chores.js");
 
 //index
 router.get("/", (req, res) => {
-  console.log(req.session.currentUser.chores);
+  //   console.log(req.session.currentUser.chores);
   res.render("chores/index.ejs", {
     currentUser: req.session.currentUser
   });
@@ -21,9 +21,30 @@ router.get("/new", (req, res) => {
 
 //create
 router.post("/", (req, res) => {
+  const id = req.session.currentUser._id;
+
+  // User.update(
+  //   { _id: id },
+  //   { $push: { chores: { name: req.body.name, assigned: req.body.assigned } } }
+  // );
+  const thisUser = User.findById(id);
+
+  //   console.log(req.session.currentUser);
+  //   req.session.currentUser.chores.push(req.body);
+  //   req.session.currentUser.save();
   Chores.create(req.body, (error, createdChores) => {
-    req.session.currentUser.chores.push(createdChores);
-    console.log(req.session.currentUser);
+    // console.log(req.session.currentUser);
+    // console.log(thisUser);
+    // thisUser.chores.push({ chores: createdChores });
+    // thisUser.save();
+    // User.findByIdAndUpdate(
+    //   { _id: id },
+    //   {
+    //     $push: { chores: createdChores }
+    //   }
+    // );
+    // User.update({ _id: id }, { $push: { chores: createdChores._id } });
+    // console.log(createdChores._id);
     if (error) {
       res.send(error);
     } else {
