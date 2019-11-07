@@ -40,6 +40,8 @@ h2 {
   margin: 0 auto;
   margin-top: 20px;
   margin-left: 150px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
 }
 .picture {
   background-image: url("/img/greycouple.jpg");
@@ -59,6 +61,6 @@ h2 {
 
 .input-field {
   border: none;
-
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
 }

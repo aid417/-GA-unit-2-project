@@ -4,15 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/5807771e6c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/signup.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>Create Household</h1>
-    <form action="/users" method="POST">
-      <input type="text" name="household" placeholder="household name" />
-      <input type="text" name="username" placeholder="username" />
-      <input type="password" name="password" placeholder="password" />
-      <input type="submit" value="Create User" />
-    </form>
+    <div class="create">
+      <div class="form">
+        <h2>join ho<span class="us">US</span>hold</h2>
+        <form action="/users" method="POST">
+          <div class="input-container">
+            <i class="fas fa-home"></i>
+            <input
+              class="input-field"
+              type="text"
+              name="household"
+              placeholder="household name"
+            />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-user"></i>
+            <input
+              class="input-field"
+              type="text"
+              name="username"
+              placeholder="username"
+            />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-key"></i>
+            <input
+              class="input-field"
+              type="password"
+              name="password"
+              placeholder="password"
+            />
+          </div>
+
+          <input type="submit" value="REGISTER" id="submit" />
+        </form>
+      </div>
+      <div class="picture"></div>
+    </div>
   </body>
 </html>
