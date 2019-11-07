@@ -14,24 +14,52 @@ router.get("/", (req, res) => {
   });
 });
 //new
-router.get("/new", (req, res) => {
-  res.render("chores/new.ejs");
+router.get("/new/:user", (req, res) => {
+  res.render("chores/new.ejs", { user: req.params.user });
 });
 //show
 
 //create
-router.post("/", (req, res) => {
+router.post("/user1chores", (req, res) => {
   const id = req.session.currentUser._id;
 
   Chores.create(req.body, (error, createdChores) => {
     console.log(req.session.currentUser);
-    // console.log(thisUser);
-    // thisUser.chores.push({ chores: createdChores });
-    // thisUser.save();
+    const chores = req.params.user;
+    console.log(chores);
+
     User.findByIdAndUpdate(
       req.session.currentUser._id,
       {
-        $push: { chores: createdChores }
+        $push: { user1chores: createdChores }
+      },
+      { new: true },
+      (error, updatedUser) => {
+        console.log(createdChores);
+        console.log("added chores to user");
+        console.log(updatedUser);
+      }
+    );
+
+    if (error) {
+      res.send(error);
+    } else {
+      res.redirect("http://localhost:3000/chores");
+    }
+  });
+});
+router.post("/user2chores", (req, res) => {
+  const id = req.session.currentUser._id;
+
+  Chores.create(req.body, (error, createdChores) => {
+    console.log(req.session.currentUser);
+    const chores = req.params.user;
+    console.log(chores);
+
+    User.findByIdAndUpdate(
+      req.session.currentUser._id,
+      {
+        $push: { user2chores: createdChores }
       },
       { new: true },
       (error, updatedUser) => {

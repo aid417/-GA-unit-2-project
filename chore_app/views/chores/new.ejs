@@ -9,7 +9,7 @@
   <body>
     <h1>New Chores</h1>
     <a href="/chores">Back</a>
-    <form action="/chores" method="POST">
+    <form action="/chores/<%=user%>" method="POST">
       <input type="text" name="name" placeholder="Name" />
       <input type="text" name="assigned" placeholder="Assigned To" />
       <input type="submit" value="Create Chore" />

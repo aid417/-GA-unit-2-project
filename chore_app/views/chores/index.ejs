@@ -5,15 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/5807771e6c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/chores.css" />
   </head>
   <body>
     <h1>Welcome <%= currentUser.household %></h1>
     <a href="http://localhost:3000/">Back</a>
 
-    <a href="/chores/new">Add a Chore</a>
-    <% for(let i = 0; i < currentUser.chores.length; i++){ %>
-    <p><%= currentUser.chores[i].name %></p>
-    <p><%= currentUser.chores[i].assigned %></p>
-    <% } %>
+    <div class="users">
+      <div class="user1">
+        <h2><%= currentUser.user1 %></h2>
+        <a href="/chores/new/user1chores">Add a Chore</a>
+        <% for(let i = 0; i < currentUser.user1chores.length; i++){ %>
+        <li><%= currentUser.user1chores[i].name %></li>
+        <% } %>
+      </div>
+      <div class="user2">
+        <h2><%= currentUser.user2 %></h2>
+        <a href="/chores/new/user2chores">Add a Chore</a>
+        <% for(let i = 0; i < currentUser.user2chores.length; i++){ %>
+        <li><%= currentUser.user2chores[i].name %></li>
+        <% } %>
+      </div>
+    </div>
   </body>
 </html>
