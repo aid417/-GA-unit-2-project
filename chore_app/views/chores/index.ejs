@@ -11,6 +11,9 @@
     <a href="http://localhost:3000/">Back</a>
 
     <a href="/chores/new">Add a Chore</a>
-    <p><%= currentUser.chores %></p>
+    <% for(let i = 0; i < currentUser.chores.length; i++){ %>
+    <p><%= currentUser.chores[i].name %></p>
+    <p><%= currentUser.chores[i].assigned %></p>
+    <% } %>
   </body>
 </html>

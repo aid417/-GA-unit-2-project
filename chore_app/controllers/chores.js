@@ -23,28 +23,24 @@ router.get("/new", (req, res) => {
 router.post("/", (req, res) => {
   const id = req.session.currentUser._id;
 
-  // User.update(
-  //   { _id: id },
-  //   { $push: { chores: { name: req.body.name, assigned: req.body.assigned } } }
-  // );
-  const thisUser = User.findById(id);
-
-  //   console.log(req.session.currentUser);
-  //   req.session.currentUser.chores.push(req.body);
-  //   req.session.currentUser.save();
   Chores.create(req.body, (error, createdChores) => {
-    // console.log(req.session.currentUser);
+    console.log(req.session.currentUser);
     // console.log(thisUser);
     // thisUser.chores.push({ chores: createdChores });
     // thisUser.save();
-    // User.findByIdAndUpdate(
-    //   { _id: id },
-    //   {
-    //     $push: { chores: createdChores }
-    //   }
-    // );
-    // User.update({ _id: id }, { $push: { chores: createdChores._id } });
-    // console.log(createdChores._id);
+    User.findByIdAndUpdate(
+      req.session.currentUser._id,
+      {
+        $push: { chores: createdChores }
+      },
+      { new: true },
+      (error, updatedUser) => {
+        console.log(createdChores);
+        console.log("added chores to user");
+        console.log(updatedUser);
+      }
+    );
+
     if (error) {
       res.send(error);
     } else {

@@ -1,16 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title></title>
-  </head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/5807771e6c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
   <body>
-    <h1>Log In</h1>
-    <form action="/sessions" method="POST">
-      <input type="text" name="username" placeholder="household" />
-      <input type="password" name="password" placeholder="password" />
-      <input type="submit" value="Log In" />
-    </form>
+    <!-- <h1>Log In</h1> -->
+    <div class="login">
+      <div class="form">
+        <h2>login to ho<span class="us">US</span>ehold</h2>
+        <form action="/sessions" method="POST">
+          <div class="input-container">
+            <i class="fas fa-home"></i>
+            <input
+              class="input-field"
+              type="text"
+              name="username"
+              placeholder="username"
+            />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-key"></i>
+            <input
+              class="input-field"
+              type="password"
+              name="password"
+              placeholder="password"
+            />
+          </div>
+
+          <input type="submit" value="LOGIN" id="submit" />
+        </form>
+      </div>
+      <div class="picture"></div>
+    </div>
   </body>
 </html>
