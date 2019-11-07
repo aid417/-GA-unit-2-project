@@ -18,7 +18,18 @@ router.get("/new/:user", (req, res) => {
   res.render("chores/new.ejs", { user: req.params.user });
 });
 //show
-
+router.get("/user1chores/:id", (req, res) => {
+  console.log(req.params.id);
+  const position = req.params.id;
+  console.log(req.session.currentUser.user1chores[position]);
+  const chore = req.session.currentUser.user1chores[position];
+  res.render("chores/show.ejs", { chore: chore });
+});
+router.get("/user2chores/:id", (req, res) => {
+  console.log(req.params.id);
+  const position = req.params.id;
+  res.render("chores/show.ejs", { chore: req.params.id });
+});
 //create
 router.post("/user1chores", (req, res) => {
   const id = req.session.currentUser._id;

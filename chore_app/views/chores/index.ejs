@@ -16,23 +16,35 @@
     <link rel="stylesheet" href="/css/chores.css" />
   </head>
   <body>
-    <h1>Welcome <%= currentUser.household %></h1>
-    <a href="http://localhost:3000/">Back</a>
+    <h1>Our Chores</h1>
+    <a id="back" href="http://localhost:3000/">Back</a>
 
     <div class="users">
       <div class="user1">
         <h2><%= currentUser.user1 %></h2>
         <a href="/chores/new/user1chores">Add a Chore</a>
-        <% for(let i = 0; i < currentUser.user1chores.length; i++){ %>
-        <li><%= currentUser.user1chores[i].name %></li>
-        <% } %>
+        <div class="chores">
+          <% for(let i = 0; i < currentUser.user1chores.length; i++){ %>
+          <li>
+            <a href="/chores/user1chores/<%= i %>"
+              ><%= currentUser.user1chores[i].name %></a
+            >
+          </li>
+          <% } %>
+        </div>
       </div>
       <div class="user2">
         <h2><%= currentUser.user2 %></h2>
         <a href="/chores/new/user2chores">Add a Chore</a>
-        <% for(let i = 0; i < currentUser.user2chores.length; i++){ %>
-        <li><%= currentUser.user2chores[i].name %></li>
-        <% } %>
+        <div class="chores">
+          <% for(let i = 0; i < currentUser.user2chores.length; i++){ %>
+          <li>
+            <a href="/chores/user2chores/<%= i %>"
+              ><%= currentUser.user2chores[i].name %></a
+            >
+          </li>
+          <% } %>
+        </div>
       </div>
     </div>
   </body>
