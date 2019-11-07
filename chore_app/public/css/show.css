@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+  background: rgba(207, 214, 227, 0.8);
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: blue;
+}

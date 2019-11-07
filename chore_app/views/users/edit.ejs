@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="edit">
+      <div class="form">
+        <h2>edit your ho<span class="us">US</span>ehold</h2>
+        <form action="/users/update/<%= user._id %>?_method=PUT" method="POST">
+          <div class="input-container">
+            <i class="fas fa-home"></i>
+            <input
+              class="input-field"
+              type="text"
+              name="household"
+              value="<%=user.household%>"
+              placeholder="household"
+            />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-users"></i>
+            <input
+              class="input-field"
+              type="text"
+              name="username"
+              value="<%=user.username%>"
+              placeholder="username"
+            />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-user"></i>
+            <input
+              class="input-field"
+              type="text"
+              name="user1"
+              value="<%=user.user1%>"
+              placeholder="member 1"
+            />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-user"></i>
+            <input
+              class="input-field"
+              type="text"
+              name="user2"
+              value="<%=user.user2%>"
+              placeholder="member 2"
+            />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-key"></i>
+            <input
+              class="input-field"
+              type="password"
+              name="password"
+              value="<%=user.password%>"
+              placeholder="password"
+            />
+          </div>
+
+          <input type="submit" value="EDIT" id="submit" />
+        </form>
+      </div>
+      <div class="picture"></div>
+    </div>
+  </body>
+</html>

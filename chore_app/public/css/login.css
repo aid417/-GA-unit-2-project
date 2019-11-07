@@ -43,6 +43,11 @@ h2 {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
+#submit:hover {
+  cursor: pointer;
+  background: white;
+  color: rgb(57, 58, 93);
+}
 .picture {
   background-image: url("/img/greycouple.jpg");
   background-repeat: no-repeat;

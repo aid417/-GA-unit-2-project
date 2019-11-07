@@ -16,11 +16,20 @@
     <link rel="stylesheet" href="/css/chores.css" />
   </head>
   <body>
-    <h1>Our Chores</h1>
+    <form
+      action="/chores/delete/<%= currentUser._id %>?_method=delete"
+      method="POST"
+    >
+      <input id="delete" type="submit" value="DELETE ACCOUNT" />
+    </form>
+    <a href="/users/edit/<%= currentUser._id %>">EDIT ACCOUNT</a>
+    <h1>Today's Chores</h1>
+
     <a id="back" href="http://localhost:3000/">Back</a>
 
     <div class="users">
       <div class="user1">
+        <% console.log(currentUser.user1chores.length) %>
         <h2><%= currentUser.user1 %></h2>
         <a href="/chores/new/user1chores">Add a Chore</a>
         <div class="chores">

@@ -28,7 +28,8 @@ router.get("/user1chores/:id", (req, res) => {
 router.get("/user2chores/:id", (req, res) => {
   console.log(req.params.id);
   const position = req.params.id;
-  res.render("chores/show.ejs", { chore: req.params.id });
+  const chore = req.session.currentUser.user2chores[position];
+  res.render("chores/show.ejs", { chore: chore });
 });
 //create
 router.post("/user1chores", (req, res) => {
@@ -87,6 +88,29 @@ router.post("/user2chores", (req, res) => {
     }
   });
 });
+//EDIT
+// router.get("/edit/:id", (req, res) => {
+//   User.findById(req.params.id , (error, foundUser)=>{
+//     if(error){
+//       console.log(error)
+//     }else{
+//       res.render('')
+//     }
+//   })
+// });
 
+//DELETE
+router.delete("/delete/:id", (req, res) => {
+  console.log(req.params.id);
+  User.findByIdAndRemove(req.params.id, (error, deletedUser) => {
+    if (error) {
+      console.log(error);
+    } else {
+      req.session.destroy(() => {
+        res.redirect("/");
+      });
+    }
+  });
+});
 // EXPORT
 module.exports = router;

@@ -8,7 +8,7 @@ h1 {
   /* border: 1px solid orange; */
   width: 300px;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 20px;
   font-size: 50px;
 }
@@ -18,7 +18,7 @@ h1 {
   justify-content: space-evenly;
   /* border: 1px solid orange; */
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 .chores {
   text-align: left;
@@ -52,3 +52,30 @@ h2 {
   margin-top: 200px;
   font-size: 20px;
 }
+
+#delete {
+  background: none;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: rgb(150, 52, 132);
+}
+#delete:hover {
+  color: white;
+  cursor: pointer;
+}
+#edit {
+  background: none;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: rgb(150, 52, 132);
+}
+#edit:hover {
+  color: white;
+  cursor: pointer;
+}
+/* form {
+  border: none;
+  background: none;
+} */
