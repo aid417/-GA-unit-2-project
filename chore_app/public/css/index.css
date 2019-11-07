@@ -61,3 +61,13 @@ h1 {
   font-weight: bold;
   color: white;
 }
+
+#logout {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 25px;
+}
+#logout:hover {
+  color: rgb(150, 52, 132);
+}
