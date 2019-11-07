@@ -10,7 +10,7 @@ body {
 }
 
 .layer {
-  background: rgba(16, 152, 247, 0.6);
+  background: rgba(16, 152, 247, 0.7);
   height: 100vh;
 }
 a {
@@ -35,11 +35,11 @@ a:hover {
 }
 header {
   /* border: 1px solid orange; */
-  width: 585px;
+  width: 650px;
   height: 200px;
   margin-top: 250px;
   text-align: center;
-  margin-left: 28%;
+  margin-left: 25%;
 
   position: fixed;
 }
@@ -47,7 +47,11 @@ p {
   font-size: 30px;
   /* color: rgb(150, 52, 132); */
   /* color: rgb(150, 52, 132); */
-  color: black;
+  /* color: rgb(42, 245, 255); */
+  color: rgb(139, 232, 203);
+  /* color: rgb(16, 152, 247); */
+  /* font-family: "Nunito", sans-serif; */
+  /* font-family: "Lora", serif; */
   font-weight: bold;
 }
 h1 {
