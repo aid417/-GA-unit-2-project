@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/5807771e6c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/edituser.css" />
   </head>
   <body>
     <div class="edit">
       <div class="form">
         <h2>edit your ho<span class="us">US</span>ehold</h2>
+        <a href="/">home</a>
         <form action="/users/update/<%= user._id %>?_method=PUT" method="POST">
           <div class="input-container">
             <i class="fas fa-home"></i>

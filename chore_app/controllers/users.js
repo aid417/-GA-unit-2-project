@@ -48,5 +48,18 @@ router.put("/update/:id", (req, res) => {
     }
   );
 });
+//DELETE
+router.delete("/delete/:id", (req, res) => {
+  console.log(req.params.id);
+  User.findByIdAndRemove(req.params.id, (error, deletedUser) => {
+    if (error) {
+      console.log(error);
+    } else {
+      req.session.destroy(() => {
+        res.redirect("/");
+      });
+    }
+  });
+});
 // EXPORT
 module.exports = router;
