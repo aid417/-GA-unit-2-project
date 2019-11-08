@@ -4,15 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/5807771e6c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/newchores.css" />
     <title>Document</title>
   </head>
   <body>
     <h1>New Chores</h1>
     <a href="/chores">Back</a>
-    <form action="/chores/<%=user%>" method="POST">
-      <input type="text" name="name" placeholder="Name" />
-      <input type="text" name="assigned" placeholder="Assigned To" />
-      <input type="submit" value="Create Chore" />
-    </form>
+    <div class="form">
+      <form action="/chores/<%=user%>" method="POST">
+        <div class="input">
+          <input type="text" name="name" placeholder="Name" />
+          <input type="text" name="assigned" placeholder="Assigned To" />
+        </div>
+
+        <input type="submit" value="Create Chore" id="submit" />
+      </form>
+    </div>
   </body>
 </html>
