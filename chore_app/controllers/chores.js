@@ -210,6 +210,73 @@ router.put("/update/user2chores/:id", (req, res) => {
   );
 });
 //DELETE
-
+router.delete("/delete/user1chores/:id", (req, res) => {
+  const choresArray = req.session.currentUser.user1chores.filter(chore => {
+    if (chore._id == req.params.id) {
+      console.log("matched");
+    } else {
+      return chore;
+    }
+  });
+  console.log(choresArray);
+  User.update(
+    {
+      _id: req.session.currentUser._id
+    },
+    {
+      $set: { user1chores: choresArray }
+    },
+    { new: true },
+    (error, updatedUser) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(updatedUser);
+      }
+    }
+  );
+  Chores.findByIdAndRemove(req.params.id, (error, deletedChore) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(deletedChore);
+      res.redirect("/chores");
+    }
+  });
+});
+router.delete("/delete/user2chores/:id", (req, res) => {
+  const choresArray = req.session.currentUser.user2chores.filter(chore => {
+    if (chore._id == req.params.id) {
+      console.log("matched");
+    } else {
+      return chore;
+    }
+  });
+  console.log(choresArray);
+  User.update(
+    {
+      _id: req.session.currentUser._id
+    },
+    {
+      $set: { user2chores: choresArray }
+    },
+    { new: true },
+    (error, updatedUser) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(updatedUser);
+      }
+    }
+  );
+  Chores.findByIdAndRemove(req.params.id, (error, deletedChore) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(deletedChore);
+      res.redirect("/chores");
+    }
+  });
+});
 // EXPORT
 module.exports = router;
