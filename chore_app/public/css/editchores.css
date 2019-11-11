@@ -1,38 +1,7 @@
 body {
-  /* background: rgb(139, 232, 203); */
+  text-align: center;
   background: rgba(207, 214, 227, 0.8);
   font-family: "Roboto", sans-serif;
-  text-align: center;
-  color: rgb(57, 58, 93);
-}
-.form {
-  background: rgba(150, 52, 132, 0.5);
-  border-radius: 15px;
-  width: 500px;
-  margin: 0 auto;
-  margin-top: 40px;
-  height: 200px;
-}
-form {
-  display: flex;
-  flex-direction: column;
-}
-#submit {
-  background: rgb(57, 58, 93);
-  color: white;
-  width: 100px;
-  height: 30px;
-  border-radius: 10px;
-  font-size: 15px;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  margin: 0 auto;
-}
-#submit:hover {
-  cursor: pointer;
-  background: white;
-  color: rgb(57, 58, 93);
 }
 a {
   text-decoration: none;
@@ -41,11 +10,29 @@ a {
 a:hover {
   color: white;
 }
-.input {
+#submit {
+  background: rgb(57, 58, 93);
+  color: white;
+  width: 85px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin: 0 auto;
+  margin-top: 20px;
+  /* margin-left: 150px; */
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+#submit:hover {
+  cursor: pointer;
+  background: white;
+  color: rgb(57, 58, 93);
+}
+form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 300px;
   margin: 0 auto;
-  margin-bottom: 20px;
   margin-top: 20px;
 }

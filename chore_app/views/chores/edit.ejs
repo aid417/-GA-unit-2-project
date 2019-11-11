@@ -4,28 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/editchores.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
     <h1>Edit Chore</h1>
     <a href="/chores">Back</a>
-    <form
-      action="/chores/update/user1chores/<%= chore._id%>?_method=PUT"
-      method="POST"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        value="<%= chore.name %>"
-      />
-      <input
-        type="text"
-        name="assigned"
-        placeholder="Assigned To"
-        value="<%= chore.assigned %>"
-      />
-      <input type="submit" value="Edit Chore" />
-    </form>
+    <div class="form">
+      <form
+        action="/chores/update/user1chores/<%= chore._id%>?_method=PUT"
+        method="POST"
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          value="<%= chore.name %>"
+        />
+        <input
+          type="text"
+          name="assigned"
+          placeholder="Assigned To"
+          value="<%= chore.assigned %>"
+        />
+        <input type="submit" value="Edit Chore" id="submit" />
+      </form>
+    </div>
   </body>
 </html>
